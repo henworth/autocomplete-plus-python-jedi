@@ -26,6 +26,9 @@ if not test_acp?
 
 module.exports =
   config:
+    pythonExecutablePath:
+      type: 'string'
+      default: 'python'
     completeArguments:
       type: 'boolean'
       default: true

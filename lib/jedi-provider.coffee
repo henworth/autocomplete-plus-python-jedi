@@ -70,7 +70,7 @@ class JediProvider
 	createJediFor: (editor, identifier) ->
 		paths = @collectPathsFor(editor)
 
-		proc = spawn("python", [ __dirname + '/jedi-cmd.py' ])
+		proc = spawn(atom.config.get('autocomplete-plus-python-jedi.pythonExecutablePath'), [ __dirname + '/jedi-cmd.py' ])
 
 		proc.on('error', (err) => @handleProcessError(identifier, err))
 		proc.on('exit', (code, signal) => @handleProcessError(identifier, code))
